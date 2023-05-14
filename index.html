@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Queen Đặng Thuỳ Linh</title>
+
+    <!-- Required meta tags -->
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" type="image/x-icon" href="./img/icon.png" />
+
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
+      crossorigin="anonymous"
+    />
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="./css/style.css" />
+
+    <!-- Tabs CSS-->
+    <link
+      rel="stylesheet"
+      href="//cdnjs.cloudflare.com/ajax/libs/normalize/2.0.1/normalize.css"
+    />
+
+    <!-- Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css?family=PT+Sans"
+      rel="stylesheet"
+      type="text/css"
+    />
+  </head>
+
+  <body>
+    <div id="tab-4">
+      <p>
+        Bài tập: Tính tiền cáp
+
+        <form action="#" class="mb-5 mx-auto w-25">
+              <label for="maKH" class="form-label">Mã khách hàng</label>
+              <input type="text" id="maKH" placeholder="Nhập mã" class="form-control w-100" required>
+
+              <label for="loaiKH" class="form-label">Loại khách hàng</label>
+              <select class="form-select w-100" id="loaiKH" onchange="thayDoiLoaiKH()">
+                  <option selected>Chọn loại khách hàng</option>
+                  <option value="1">Hộ Gia Đình</option>
+                  <option value="2">Doanh Nghiệp</option>
+              </select>
+
+              <label for="soKetNoi" class="form-label">Số kết nối</label>
+              <input type="text" id="soKetNoi" placeholder="Nhập số kết nối" class="form-control w-100"
+                  required disabled>
+
+              <label for="kenhCaoCap" class="form-label">Số kênh cao cấp</label>
+              <input type="text" id="kenhCaoCap" placeholder="Nhập số kênh cao cấp" class="form-control w-100"
+                  required>
+
+                  <button type="button" id="btnTinhTienCap">Tính tiền cáp
+                    <span class="first"></span>
+                    <span class="second"></span>
+                    <span class="third"></span>
+                    <span class="fourth"></span>
+                  </button>
+
+          <div id="ketQua4" class="alert alert-info w-100"></div>
+      </form>
+      </p>
+    </div>
+    <div id="tab-3">
+      <p>
+        Bài tập: Tính thuế thu nhập cá nhân
+
+        <form action="#" class="mb-5 mx-auto w-25">
+              <label for="hoTen" class="form-label">Nhập họ tên</label>
+              <input type="text" id="hoTen" placeholder="Nhập họ tên của bạn" class="form-control w-100" required>
+
+              <label for="tongThuNhap" class="form-label">Nhập tổng thu nhập năm (triệu)</label>
+              <input type="text" id="tongThuNhap" placeholder="Nhập số điện" class="form-control w-100" required>
+
+              <label for="soNguoiPhuThuoc" class="form-label">Nhập số người phụ thuộc</label>
+              <input type="text" id="soNguoiPhuThuoc" placeholder="Nhập số người" class="form-control w-100"
+                  required>
+
+                  <button type="button" id="btnTinhThue" onclick="tinhThue()">
+              Tính thuế
+              <span class="first"></span>
+              <span class="second"></span>
+              <span class="third"></span>
+              <span class="fourth"></span>
+            </button>
+          <div id="ketQua3" class="alert alert-info w-100"></div>
+      </form>
+      </p>
+    </div>
+    <div id="tab-2">
+      <p>
+        Bài tập: Tính tiền điện
+
+        <form action="#" class="mb-5 mx-auto w-25">
+              <label for="ten" class="form-label">Nhập tên</label>
+              <input type="text" id="ten" placeholder="Nhập tên của bạn" class="form-control w-100" required>
+
+              <label for="soDien" class="form-label">Nhập số điện tiêu thụ</label>
+              <input type="text" id="soDien" placeholder="Nhập số điện" class="form-control w-100" required>
+
+              <button type="button" id="btnTienDien">
+                Tính tiền
+                <span class="first"></span>
+                <span class="second"></span>
+                <span class="third"></span>
+                <span class="fourth"></span>
+              </button>
+          <div id="ketQua2" class="alert alert-info w-100"></div>
+      </form>
+      </p>
+    </div>
+    <div id="tab-1">
+      <p>
+        Bài tập: Quản lý tuyển sinh
+      <form action="#" class="mb-5 mx-auto w-25">
+              <label for="diemChuan" class="form-label">Nhập điểm chuẩn</label>
+              <input type="text" id="diemChuan" placeholder="Nhập điểm" class="form-control w-100" required>
+
+              <label for="diemToan" class="form-label">Nhập điểm môn Toán</label>
+              <input type="text" id="diemToan" placeholder="Nhập điểm" class="form-control w-100" required>
+
+              <label for="diemVan" class="form-label">Nhập điểm môn Văn</label>
+              <input type="text" id="diemVan" placeholder="Nhập điểm" class="form-control w-100" required>
+
+              <label for="diemAnh" class="form-label">Nhập điểm môn tiếng Anh</label>
+              <input type="text" id="diemAnh" placeholder="Nhập điểm" class="form-control w-100" required>
+
+              <label for="khuVuc" class="form-label">Chọn khu vực ưu tiên</label>
+              <select class="form-select w-100" id="khuVuc">
+                  <option selected>Chọn khu vực</option>
+                  <option value="2">A</option>
+                  <option value="1">B</option>
+                  <option value="0.5">C</option>
+                  <option value="0">Không thuộc khu vực ưu tiên</option>
+              </select>
+              <label for="doiTuong" class="form-label">Chọn đối tượng ưu tiên</label>
+              <select class="form-select w-100" id="doiTuong">
+                  <option selected>Chọn đối tượng</option>
+                  <option value="2.5">1</option>
+                  <option value="1.5">2</option>
+                  <option value="1">3</option>
+                  <option value="0">Không thuộc đối tượng ưu tiên</option>
+              </select>
+            <button type="button" id="btnTongDiem">Tính tổng điểm
+              <span class="first"></span>
+              <span class="second"></span>
+              <span class="third"></span>
+              <span class="fourth"></span>
+            </button>
+          <div id="ketQua" class="alert alert-info w-100"></div>
+      </form>
+      </p>
+    </div>
+  </body>
+
+  <footer></footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.6/prefixfree.min.js"></script>
+
+  <!-- Bootstrap JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+      integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
+    </script>
+
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+      integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
+    </script>
+
+    <script src="js/main.js"></script>
+</html>
